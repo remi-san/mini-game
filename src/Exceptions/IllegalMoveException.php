@@ -41,4 +41,11 @@ class IllegalMoveException extends GameException {
     public function getMove() {
         return $this->move;
     }
+
+    /**
+     * @return GameResult
+     */
+    public function getResult() {
+        return $this->result;
+    }
 } 
