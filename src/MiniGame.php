@@ -1,0 +1,35 @@
+<?php
+namespace MiniGame;
+
+interface MiniGame {
+
+    /**
+     * Returns the name of the mini-game
+     * @return string
+     */
+    public static function getName();
+
+    /**
+     * Returns the id of the game (unique string)
+     *
+     * @return string
+     */
+    public function getId();
+
+    /**
+     * Allows the player to play the game
+     *
+     * @param  Player $player
+     * @param  string $answer
+     * @return GameResult
+     */
+    public function play(Player $player, $answer);
+
+    /**
+     * Is it the player's turn?
+     *
+     * @param  Player $player
+     * @return bool
+     */
+    public function canPlay(Player $player);
+} 
