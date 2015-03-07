@@ -43,4 +43,11 @@ abstract class HangmanGameResult extends AbstractGameResult implements GameResul
     {
         return $this->remainingChances;
     }
+
+    /**
+     * @return string
+     */
+    protected function getPlayedLettersAsString() {
+        return implode(', ', $this->lettersPlayed);
+    }
 } 

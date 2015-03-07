@@ -4,7 +4,7 @@ namespace MiniGame\Hangman\Result;
 use MiniGame\Player;
 use MiniGame\Result\EndGame;
 
-class HangmanEndGame extends HangmanGameResult implements EndGame {
+abstract class HangmanEndGame extends HangmanGameResult implements EndGame {
 
     /**
      * @var string
