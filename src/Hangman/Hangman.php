@@ -63,7 +63,7 @@ class Hangman implements MiniGame {
         }
 
         $this->id = $id;
-        $this->word = $word;
+        $this->word = strtoupper($word);
         $this->players = $players;
 
         $this->lettersPlayed = array();
