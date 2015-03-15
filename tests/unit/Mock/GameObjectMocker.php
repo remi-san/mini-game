@@ -1,9 +1,11 @@
 <?php
 namespace MiniGame\Test\Mock;
 
+use MiniGame\GameOptions;
 use MiniGame\GameResult;
 use MiniGame\Hangman\Hangman;
 use MiniGame\Hangman\Manager\HangmanManager;
+use MiniGame\Hangman\Options\HangmanOptions;
 use MiniGame\MiniGame;
 use MiniGame\Player;
 use MiniGame\Result\EndGame;
@@ -106,5 +108,29 @@ trait GameObjectMocker
         $message = \Mockery::mock('\\MiniGame\\Result\\EndGame');
         $message->shouldReceive('getAsMessage')->andReturn($text);
         return $message;
+    }
+
+    /**
+     * @return GameOptions
+     */
+    public function getGameOptions()
+    {
+        $options = \Mockery::mock('\\MiniGame\\GameOptions');
+
+        return $options;
+    }
+
+    /**
+     * @return HangmanOptions
+     */
+    public function getHangmanOptions($word = null, $length = null, $level = null)
+    {
+        $options = \Mockery::mock('\\MiniGame\\Hangman\\Options\\HangmanOptions');
+
+        $options->shouldReceive('getWord')->andReturn($word);
+        $options->shouldReceive('getLength')->andReturn($length);
+        $options->shouldReceive('getLevel')->andReturn($level);
+
+        return $options;
     }
 }

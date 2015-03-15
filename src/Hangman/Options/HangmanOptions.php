@@ -54,7 +54,7 @@ class HangmanOptions extends AbstractGameOptions implements GameOptions {
      */
     public function setLength($length)
     {
-        if ($this->word) {
+        if ($length !== null && $this->word) {
             throw new IllegalOptionException("You can't set the length if the word is already chosen!", 'length', $length);
         }
 
@@ -75,7 +75,7 @@ class HangmanOptions extends AbstractGameOptions implements GameOptions {
      */
     public function setLevel($level)
     {
-        if ($this->word) {
+        if ($level !== null && $this->word) {
             throw new IllegalOptionException("You can't set the level if the word is already chosen!", 'level', $level);
         }
 
@@ -96,7 +96,7 @@ class HangmanOptions extends AbstractGameOptions implements GameOptions {
      */
     public function setWord($word)
     {
-        if ($this->length || $this->level) {
+        if ($word !== null && ($this->length || $this->level)) {
             throw new IllegalOptionException("You can't set the word if the level and/or the length are already chosen!", 'word', $word);
         }
 

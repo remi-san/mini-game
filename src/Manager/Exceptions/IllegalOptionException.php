@@ -26,7 +26,7 @@ class IllegalOptionException extends \Exception {
      */
     public function __construct($message, $optionName, $optionValue, $code = 0, \Exception $previous = null) {
         $this->optionName = $optionName;
-        $this->$optionValue = $optionValue;
+        $this->optionValue = $optionValue;
         parent::__construct($message, $code, $previous);
     }
 
