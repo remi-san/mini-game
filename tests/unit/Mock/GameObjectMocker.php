@@ -1,15 +1,21 @@
 <?php
 namespace MiniGame\Test\Mock;
 
+use MiniGame\GameResult;
+use MiniGame\Hangman\Hangman;
+use MiniGame\Hangman\Manager\HangmanManager;
 use MiniGame\MiniGame;
 use MiniGame\Player;
+use MiniGame\Result\EndGame;
+use WordSelector\WordSelector;
 
-trait GameObjectMocker {
+trait GameObjectMocker
+{
 
     /**
-     * Returns a player
+     * Returns a twitter player
      *
-     * @param  int    $id
+     * @param  int $id
      * @param  string $name
      * @return Player
      */
@@ -25,15 +31,80 @@ trait GameObjectMocker {
     /**
      * Returns a mini game
      *
-     * @param  int    $id
+     * @param  int $id
      * @param  string $name
      * @return MiniGame
      */
-    public function getMiniGame($id = null, $name = null) {
+    public function getMiniGame($id = null, $name = null)
+    {
         $miniGame = \Mockery::mock('\\MiniGame\\MiniGame');
         $miniGame->shouldReceive('getId')->andReturn($id);
         $miniGame->shouldReceive('getName')->andReturn($name);
 
         return $miniGame;
     }
-} 
+
+    /**
+     * Returns a word selector
+     *
+     * @return WordSelector
+     */
+    public function getWordSelector()
+    {
+        $ws = \Mockery::mock('\\WordSelector\\WordSelector');
+        $ws->shouldReceive('getRandomWord')->andReturn('TYRANNOSAURUS');
+
+        return $ws;
+    }
+
+    /**
+     * Returns a hangman mini-game
+     *
+     * @return Hangman
+     */
+    public function getHangmanMiniGame($id)
+    {
+        $h = \Mockery::mock('\\MiniGame\\Hangman\\Hangman');
+        $h->shouldReceive('getId')->andReturn($id);
+
+        return $h;
+    }
+
+    /**
+     * Returns a hangman Manager
+     *
+     * @param  Hangman $hangman
+     * @return HangmanManager
+     */
+    public function getHangmanManager(Hangman $hangman = null)
+    {
+        $hm = \Mockery::mock('\\MiniGame\\Hangman\\Manager\\HangmanManager');
+        $hm->shouldReceive('createMiniGame')->andReturn($hangman);
+        $hm->shouldReceive('saveMiniGame')->andReturn($hangman);
+        $hm->shouldReceive('getMiniGame')->andReturn($hangman);
+
+        return $hm;
+    }
+
+    /**
+     * @param  string $text
+     * @return GameResult
+     */
+    public function getGameResult($text)
+    {
+        $message = \Mockery::mock('\\MiniGame\\GameResult');
+        $message->shouldReceive('getAsMessage')->andReturn($text);
+        return $message;
+    }
+
+    /**
+     * @param  string $text
+     * @return EndGame
+     */
+    public function getEndGame($text)
+    {
+        $message = \Mockery::mock('\\MiniGame\\Result\\EndGame');
+        $message->shouldReceive('getAsMessage')->andReturn($text);
+        return $message;
+    }
+}
