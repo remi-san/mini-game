@@ -7,6 +7,7 @@ use MiniGame\Hangman\Hangman;
 use MiniGame\Hangman\Options\HangmanOptions;
 use MiniGame\Manager\Exceptions\GameNotFoundException;
 use MiniGame\MiniGame;
+use Rhumsaa\Uuid\Uuid;
 use WordSelector\WordSelector;
 
 class HangmanManager implements GameManager {
@@ -60,7 +61,7 @@ class HangmanManager implements GameManager {
             $word = $this->wordSelector->getRandomWord($options->getLength());
         }
 
-        return $this->saveMiniGame(new Hangman($word));
+        return $this->saveMiniGame(new Hangman($word, Uuid::uuid4()->toString(), $options->getPlayers()));
     }
 
     /**

@@ -79,7 +79,7 @@ class Hangman implements MiniGame {
             $this->remainingChances[$playerId] = $chances;
         }
 
-        $this->nextPlayer = reset($this->players);
+        $this->nextPlayer();
     }
 
     /**
@@ -114,7 +114,7 @@ class Hangman implements MiniGame {
             throw new NotPlayerTurnException($player, $this, 'It is not your turn to play');
         }
 
-        $this->nextPlayer = $this->nextPlayer();
+        $this->nextPlayer();
 
         if (strlen($answer) == 1) {
             $letter = strtoupper($answer);
@@ -168,14 +168,19 @@ class Hangman implements MiniGame {
     /**
      * Returns the next player in line
      *
-     * @return Player
+     * @return void
      */
     protected function nextPlayer() {
-        $this->nextPlayer = next($this->players);
-        if (!$this->nextPlayer) {
-            $this->nextPlayer = reset($this->players);
+        $nextPlayer = next($this->players);
+        if (!$nextPlayer) {
+            $nextPlayer = reset($this->players);
         }
-        return $this->nextPlayer;
+
+        if (!$nextPlayer) {
+            $nextPlayer = null;
+        }
+
+        $this->nextPlayer = $nextPlayer;
     }
 
     /**
