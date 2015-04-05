@@ -79,7 +79,7 @@ class Hangman implements MiniGame {
             $this->remainingChances[$playerId] = $chances;
         }
 
-        $this->nextPlayer();
+        $this->nextPlayer = reset($players);
     }
 
     /**

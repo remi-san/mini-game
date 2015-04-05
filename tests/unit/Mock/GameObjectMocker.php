@@ -123,13 +123,14 @@ trait GameObjectMocker
     /**
      * @return HangmanOptions
      */
-    public function getHangmanOptions($word = null, $length = null, $level = null)
+    public function getHangmanOptions($word = null, $length = null, $level = null, array $players = array())
     {
         $options = \Mockery::mock('\\MiniGame\\Hangman\\Options\\HangmanOptions');
 
         $options->shouldReceive('getWord')->andReturn($word);
         $options->shouldReceive('getLength')->andReturn($length);
         $options->shouldReceive('getLevel')->andReturn($level);
+        $options->shouldReceive('getPlayers')->andReturn($players);
 
         return $options;
     }
