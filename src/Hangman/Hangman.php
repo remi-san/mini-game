@@ -122,9 +122,9 @@ class Hangman implements MiniGame {
             $this->savePlayedLetter($player, $letter, $positions);
 
             if (!$positions) {
-                return $this->badProposition($player, $answer); // remove a life
+                return $this->badProposition($player); // remove a life
             } else {
-                return $this->goodProposition($player, $answer); // show the letters in good position
+                return $this->goodProposition($player); // show the letters in good position
             }
         } else if ($this->isTheAnswer($answer)) {
             return $this->win($player); // you win
@@ -187,10 +187,9 @@ class Hangman implements MiniGame {
      * Function to call after a good proposition of letter has been made
      *
      * @param  \MiniGame\Player $player
-     * @param  string $answer
      * @return HangmanGoodProposition
      */
-    protected function goodProposition(Player $player, $answer) {
+    protected function goodProposition(Player $player) {
         if ($this->isAllLettersFound($player)) {
             return $this->win($player);
         }
@@ -201,10 +200,9 @@ class Hangman implements MiniGame {
      * Function to call when a bad proposition has been made
      *
      * @param  Player $player
-     * @param  string $answer
      * @return HangmanBadProposition
      */
-    protected function badProposition(Player $player, $answer) {
+    protected function badProposition(Player $player) {
 
         $this->remainingChances[$player->getId()]--;
 

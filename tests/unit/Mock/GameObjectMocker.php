@@ -61,7 +61,7 @@ trait GameObjectMocker
 
     /**
      * Returns a hangman mini-game
-     *
+     * @param  int $id
      * @return Hangman
      */
     public function getHangmanMiniGame($id)
@@ -121,6 +121,10 @@ trait GameObjectMocker
     }
 
     /**
+     * @param  string $word
+     * @param  int    $length
+     * @param  int    $level
+     * @param  array  $players
      * @return HangmanOptions
      */
     public function getHangmanOptions($word = null, $length = null, $level = null, array $players = array())
