@@ -22,7 +22,7 @@ abstract class HangmanGameResult extends AbstractGameResult implements GameResul
      * @param array  $lettersPlayed
      * @param int    $remainingChances
      */
-    public function __construct(Player $player, array $lettersPlayed, $remainingChances) {
+    public function __construct(Player $player, array $lettersPlayed = array(), $remainingChances = null) {
         $this->lettersPlayed = $lettersPlayed;
         $this->remainingChances = $remainingChances;
         parent::__construct($player);

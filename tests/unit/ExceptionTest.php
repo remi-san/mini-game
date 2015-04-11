@@ -18,7 +18,7 @@ class ExceptionTest extends \PHPUnit_Framework_TestCase {
         $result = $this->getGameResult('result');
         $move = 'Up';
 
-        $exception = new IllegalMoveException($player, $miniGame, $move, $result, 'Oh! oh!');
+        $exception = new IllegalMoveException($player, $miniGame, $result, $move, 'Oh! oh!');
 
         $this->assertEquals($player, $exception->getPlayer());
         $this->assertEquals($miniGame, $exception->getMiniGame());

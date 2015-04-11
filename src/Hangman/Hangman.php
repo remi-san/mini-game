@@ -1,6 +1,7 @@
 <?php
 namespace MiniGame\Hangman;
 
+use MiniGame\Hangman\Result\HangmanError;
 use Rhumsaa\Uuid\Uuid;
 use MiniGame\Exceptions\IllegalMoveException;
 use MiniGame\Exceptions\NotPlayerTurnException;
@@ -111,7 +112,7 @@ class Hangman implements MiniGame {
     public function play(Player $player, $answer)
     {
         if (!$this->canPlay($player)) {
-            throw new NotPlayerTurnException($player, $this, 'It is not your turn to play');
+            throw new NotPlayerTurnException($player, $this, $this->error($player, 'Error!'), 'It is not your turn to play');
         }
 
         $this->nextPlayer();
@@ -131,7 +132,7 @@ class Hangman implements MiniGame {
         } else if (strlen($answer) == strlen($this->word)) {
             return $this->lose($player); // you lose
         } else {
-            throw new IllegalMoveException($player, $this, $answer, $this->badProposition($player, $answer), sprintf('"%s" is not a valid answer!', $answer));
+            throw new IllegalMoveException($player, $this, $this->badProposition($player), $answer, sprintf('"%s" is not a valid answer!', $answer));
         }
     }
 
@@ -181,6 +182,17 @@ class Hangman implements MiniGame {
         }
 
         $this->nextPlayer = $nextPlayer;
+    }
+
+    /**
+     * Function to call when an arror must be returned
+     *
+     * @param  Player $player
+     * @param  string $message
+     * @return HangmanError
+     */
+    protected function error(Player $player, $message) {
+        return new HangmanError($message, $player, $this->getPlayedLetters($player), $this->getRemainingChances($player)) ;
     }
 
     /**

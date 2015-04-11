@@ -13,26 +13,20 @@ class IllegalMoveException extends GameException {
     protected $move;
 
     /**
-     * @var GameResult
-     */
-    protected $result;
-
-    /**
      * Constructor
      *
      * @param Player     $player
      * @param MiniGame   $miniGame
-     * @param string     $move
      * @param GameResult $result
+     * @param string     $move
      * @param string     $message
      * @param int        $code
      * @param \Exception $previous
      */
-    public function __construct(Player $player, MiniGame $miniGame, $move, GameResult $result=null, $message="", $code=0, \Exception $previous=null)
+    public function __construct(Player $player, MiniGame $miniGame, GameResult $result=null, $move= null, $message="", $code=0, \Exception $previous=null)
     {
         $this->move = $move;
-        $this->result = $result;
-        parent::__construct($player, $miniGame, $message, $code, $previous);
+        parent::__construct($player, $miniGame, $result, $message, $code, $previous);
     }
 
     /**
@@ -40,12 +34,5 @@ class IllegalMoveException extends GameException {
      */
     public function getMove() {
         return $this->move;
-    }
-
-    /**
-     * @return GameResult
-     */
-    public function getResult() {
-        return $this->result;
     }
 } 

@@ -2,6 +2,7 @@
 namespace MiniGame\Test;
 
 use MiniGame\Hangman\Result\HangmanBadProposition;
+use MiniGame\Hangman\Result\HangmanError;
 use MiniGame\Hangman\Result\HangmanGoodProposition;
 use MiniGame\Hangman\Result\HangmanLost;
 use MiniGame\Hangman\Result\HangmanWon;
@@ -87,6 +88,23 @@ class HangmanResultTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals($this->player, $badProposition->getPlayer());
         $this->assertEquals($solution, $badProposition->getSolution());
+        $this->assertEquals($this->lettersPlayed, $badProposition->getLettersPlayed());
+        $this->assertEquals($remainingChances, $badProposition->getRemainingChances());
+        $this->assertEquals($message, $badProposition->getAsMessage());
+    }
+
+    /**
+     * @test
+     */
+    public function testError()
+    {
+        $solution = 'solution';
+        $remainingChances = 0;
+        $message = 'error';
+
+        $badProposition = new HangmanError($message, $this->player, $this->lettersPlayed, $remainingChances);
+
+        $this->assertEquals($this->player, $badProposition->getPlayer());
         $this->assertEquals($this->lettersPlayed, $badProposition->getLettersPlayed());
         $this->assertEquals($remainingChances, $badProposition->getRemainingChances());
         $this->assertEquals($message, $badProposition->getAsMessage());

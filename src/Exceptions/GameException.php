@@ -2,6 +2,7 @@
 namespace MiniGame\Exceptions;
 
 use Exception;
+use MiniGame\GameResult;
 use MiniGame\MiniGame;
 use MiniGame\Player;
 
@@ -18,18 +19,25 @@ abstract class GameException extends \Exception {
     protected $miniGame;
 
     /**
+     * @var GameResult
+     */
+    protected $result;
+
+    /**
      * Constructor
      *
-     * @param Player $player
-     * @param MiniGame $miniGame
-     * @param string $message
-     * @param int $code
+     * @param Player     $player
+     * @param MiniGame   $miniGame
+     * @param GameResult $result
+     * @param string     $message
+     * @param int        $code
      * @param \Exception $previous
      */
-    public function __construct(Player $player, MiniGame $miniGame, $message="", $code=0, \Exception $previous=null)
+    public function __construct(Player $player, MiniGame $miniGame, GameResult $result=null, $message="", $code=0, \Exception $previous=null)
     {
         $this->player = $player;
         $this->miniGame = $miniGame;
+        $this->result = $result;
         parent::__construct($message, $code, $previous);
     }
 
@@ -45,5 +53,12 @@ abstract class GameException extends \Exception {
      */
     public function getMiniGame() {
         return $this->miniGame;
+    }
+
+    /**
+     * @return GameResult
+     */
+    public function getResult() {
+        return $this->result;
     }
 }
