@@ -6,6 +6,7 @@ use MiniGame\GameResult;
 use MiniGame\Hangman\Hangman;
 use MiniGame\Hangman\Manager\HangmanManager;
 use MiniGame\Hangman\Options\HangmanOptions;
+use MiniGame\Manager\PlayerManager;
 use MiniGame\MiniGame;
 use MiniGame\Player;
 use MiniGame\Result\EndGame;
@@ -47,6 +48,17 @@ trait GameObjectMocker
     }
 
     /**
+     * @param Player $player
+     * @return PlayerManager
+     */
+    public function getPlayerManager(Player $player = null)
+    {
+        $manager = \Mockery::mock('\\MiniGame\\Manager\\PlayerManager');
+        $manager->shouldReceive('getPlayer')->andReturn($player);
+        return $manager;
+    }
+
+    /**
      * Returns a word selector
      *
      * @return WordSelector
@@ -84,6 +96,7 @@ trait GameObjectMocker
         $hm->shouldReceive('createMiniGame')->andReturn($hangman);
         $hm->shouldReceive('saveMiniGame')->andReturn($hangman);
         $hm->shouldReceive('getMiniGame')->andReturn($hangman);
+        $hm->shouldReceive('getActiveMiniGameForPlayer')->andReturn($hangman);
 
         return $hm;
     }
