@@ -1,5 +1,9 @@
 <?php
-namespace MiniGame;
+namespace MiniGame\Manager;
+
+use MiniGame\GameOptions;
+use MiniGame\MiniGame;
+use MiniGame\Player;
 
 interface GameManager {
 

@@ -1,10 +1,10 @@
 <?php
 namespace MiniGame\Hangman\Manager;
 
-use MiniGame\GameManager;
 use MiniGame\GameOptions;
 use MiniGame\Hangman\Hangman;
 use MiniGame\Hangman\Options\HangmanOptions;
+use MiniGame\Manager\GameManager;
 use MiniGame\Manager\InMemoryGameManager;
 use MiniGame\MiniGame;
 use Rhumsaa\Uuid\Uuid;

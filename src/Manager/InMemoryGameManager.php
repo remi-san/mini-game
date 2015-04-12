@@ -1,7 +1,6 @@
 <?php
 namespace MiniGame\Manager;
 
-use MiniGame\GameManager;
 use MiniGame\GameOptions;
 use MiniGame\Manager\Exceptions\GameNotFoundException;
 use MiniGame\MiniGame;
