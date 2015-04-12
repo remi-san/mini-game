@@ -58,7 +58,12 @@ class HangmanManager implements GameManager {
                 throw new \InvalidArgumentException('The level option is not supported yet!');
             }
 
-            $word = $this->wordSelector->getRandomWord($options->getLength());
+            try {
+                $word = $this->wordSelector->getRandomWord($options->getLength());
+            } catch (\Exception $e) {
+                throw new \InvalidArgumentException('A word could not be retrieved! Try with different options.');
+            }
+
         }
 
         return $this->saveMiniGame(new Hangman($word, Uuid::uuid4()->toString(), $options->getPlayers()));
