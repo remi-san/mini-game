@@ -21,11 +21,13 @@ abstract class InMemoryGameManager implements GameManager {
     /**
      * Constructor
      *
-     * @param array        $managedMiniGames
+     * @param MiniGame[] $managedMiniGames
+     * @param array      $playersMiniGames
      */
-    public function __construct(array $managedMiniGames = array())
+    public function __construct(array $managedMiniGames = array(), array $playersMiniGames = array())
     {
         $this->managedMiniGames = $managedMiniGames;
+        $this->playersMiniGames = $playersMiniGames;
     }
 
     /**
