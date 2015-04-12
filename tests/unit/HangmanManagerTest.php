@@ -128,6 +128,18 @@ class HangmanManagerTest extends \PHPUnit_Framework_TestCase {
     /**
      * @test
      */
+    public function testCreateMiniGameWithErroredLengthOption() {
+
+        $this->setExpectedException('\\InvalidArgumentException');
+        $this->wordSelector->shouldReceive('getRandomWord')->andThrow('\\Exception');
+
+        $manager = new HangmanManager($this->wordSelector);
+        $manager->createMiniGame($this->getHangmanOptions(null, 5));
+    }
+
+    /**
+     * @test
+     */
     public function testCreateMiniGameWithWordOption() {
 
         $manager = new HangmanManager($this->wordSelector);
