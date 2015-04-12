@@ -167,6 +167,16 @@ class Hangman implements MiniGame {
     }
 
     /**
+     * Get the players
+     *
+     * @return \MiniGame\Player[]
+     */
+    public function getPlayers()
+    {
+        return $this->players;
+    }
+
+    /**
      * Returns the next player in line
      *
      * @return void

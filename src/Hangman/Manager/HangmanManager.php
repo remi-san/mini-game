@@ -5,22 +5,17 @@ use MiniGame\GameManager;
 use MiniGame\GameOptions;
 use MiniGame\Hangman\Hangman;
 use MiniGame\Hangman\Options\HangmanOptions;
-use MiniGame\Manager\Exceptions\GameNotFoundException;
+use MiniGame\Manager\InMemoryGameManager;
 use MiniGame\MiniGame;
 use Rhumsaa\Uuid\Uuid;
 use WordSelector\WordSelector;
 
-class HangmanManager implements GameManager {
+class HangmanManager extends InMemoryGameManager implements GameManager {
 
     /**
      * @var WordSelector
      */
     protected $wordSelector;
-
-    /**
-     * @var MiniGame[]
-     */
-    protected $managedMiniGames;
 
     /**
      * Constructor
@@ -31,7 +26,7 @@ class HangmanManager implements GameManager {
     public function __construct(WordSelector $wordSelector, array $managedMiniGames = array())
     {
         $this->wordSelector = $wordSelector;
-        $this->managedMiniGames = $managedMiniGames;
+        parent::__construct($managedMiniGames);
     }
 
     /**
@@ -68,49 +63,4 @@ class HangmanManager implements GameManager {
 
         return $this->saveMiniGame(new Hangman($word, Uuid::uuid4()->toString(), $options->getPlayers()));
     }
-
-    /**
-     * Saves a mini-game
-     *
-     * @param  MiniGame $game
-     * @return MiniGame
-     */
-    public function saveMiniGame(MiniGame $game)
-    {
-        $this->managedMiniGames[$game->getId()] = $game;
-
-        return $game;
-    }
-
-    /**
-     * Get the mini-game corresponding to the id
-     *
-     * @param  string $id
-     * @return MiniGame
-     * @throws GameNotFoundException
-     */
-    public function getMiniGame($id)
-    {
-        if (!array_key_exists($id, $this->managedMiniGames)) {
-            throw new GameNotFoundException('Game with id "'.$id.'" doesn\'t exist!');
-        }
-
-        return $this->managedMiniGames[$id];
-    }
-
-    /**
-     * Delete the mini-game corresponding to the id
-     *
-     * @param  string $id
-     * @return void
-     * @throws GameNotFoundException
-     */
-    public function deleteMiniGame($id)
-    {
-        if (!array_key_exists($id, $this->managedMiniGames)) {
-            throw new GameNotFoundException('Game with id "'.$id.'" doesn\'t exist!');
-        }
-
-        unset($this->managedMiniGames[$id]);
-    }
-} 
+}

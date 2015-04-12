@@ -28,6 +28,14 @@ interface GameManager {
     public function getMiniGame($id);
 
     /**
+     * Get the active mini-game for the player
+     *
+     * @param Player $player
+     * @return MiniGame
+     */
+    public function getActiveMiniGameForPlayer(Player $player);
+
+    /**
      * Delete the mini-game corresponding to the id
      *
      * @param  string $id

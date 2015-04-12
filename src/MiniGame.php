@@ -32,4 +32,11 @@ interface MiniGame {
      * @return bool
      */
     public function canPlay(Player $player);
+
+    /**
+     * Get the players
+     *
+     * @return Player[]
+     */
+    public function getPlayers();
 } 
