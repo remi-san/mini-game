@@ -17,6 +17,7 @@ class HangmanManagerTest extends \PHPUnit_Framework_TestCase {
         $this->wordSelector = \Mockery::mock('WordSelector\\WordSelector');
 
         $this->miniGame = $this->getMiniGame(self::ID, 'Game');
+        $this->miniGame->shouldReceive('getPlayers')->andReturn(array());
     }
 
     /**
