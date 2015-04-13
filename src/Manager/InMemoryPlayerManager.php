@@ -5,7 +5,7 @@ use MiniGame\MiniGamePlayer;
 use MiniGame\Player;
 use TwitterStream\API\Object\TwitterUser;
 
-class InMemoryPlayerManager implements \MiniGame\Manager\PlayerManager {
+class InMemoryPlayerManager implements PlayerManager {
 
     /**
      * @var Player[]
