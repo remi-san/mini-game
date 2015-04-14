@@ -1,5 +1,5 @@
 <?php
-namespace MiniGame\Manager\Exceptions;
+namespace MiniGame\Exceptions;
 
 use Exception;
 

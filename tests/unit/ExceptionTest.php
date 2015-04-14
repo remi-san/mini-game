@@ -2,7 +2,7 @@
 namespace MiniGame\Test;
 
 use MiniGame\Exceptions\IllegalMoveException;
-use MiniGame\Manager\Exceptions\IllegalOptionException;
+use MiniGame\Exceptions\IllegalOptionException;
 use MiniGame\Test\Mock\GameObjectMocker;
 
 class ExceptionTest extends \PHPUnit_Framework_TestCase {

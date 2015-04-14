@@ -92,7 +92,7 @@ class HangmanOptionsTest extends \PHPUnit_Framework_TestCase {
         $word    = 'word';
         $length  = 5;
 
-        $this->setExpectedException('\\MiniGame\\Manager\\Exceptions\\IllegalOptionException');
+        $this->setExpectedException('\\MiniGame\\Exceptions\\IllegalOptionException');
 
         new HangmanOptions($word, $length, null, $this->lives, $this->players);
     }
@@ -105,7 +105,7 @@ class HangmanOptionsTest extends \PHPUnit_Framework_TestCase {
         $word    = 'word';
         $level   = 5;
 
-        $this->setExpectedException('\\MiniGame\\Manager\\Exceptions\\IllegalOptionException');
+        $this->setExpectedException('\\MiniGame\\Exceptions\\IllegalOptionException');
 
         new HangmanOptions($word, null, $level, $this->lives, $this->players);
     }
@@ -119,7 +119,7 @@ class HangmanOptionsTest extends \PHPUnit_Framework_TestCase {
         $length  = 5;
         $level   = 5;
 
-        $this->setExpectedException('\\MiniGame\\Manager\\Exceptions\\IllegalOptionException');
+        $this->setExpectedException('\\MiniGame\\Exceptions\\IllegalOptionException');
 
         new HangmanOptions($word, $length, $level, $this->lives, $this->players);
     }
@@ -133,7 +133,7 @@ class HangmanOptionsTest extends \PHPUnit_Framework_TestCase {
         $length  = 5;
         $level   = 5;
 
-        $this->setExpectedException('\\MiniGame\\Manager\\Exceptions\\IllegalOptionException');
+        $this->setExpectedException('\\MiniGame\\Exceptions\\IllegalOptionException');
 
         $options = new HangmanOptions(null, $length, $level, $this->lives, $this->players);
         $options->setWord($word);

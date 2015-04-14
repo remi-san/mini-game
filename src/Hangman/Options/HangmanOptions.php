@@ -1,8 +1,8 @@
 <?php
 namespace MiniGame\Hangman\Options;
 
+use MiniGame\Exceptions\IllegalOptionException;
 use MiniGame\GameOptions;
-use MiniGame\Manager\Exceptions\IllegalOptionException;
 use MiniGame\Options\AbstractGameOptions;
 use MiniGame\Player;
 
@@ -31,7 +31,7 @@ class HangmanOptions extends AbstractGameOptions implements GameOptions {
      * @param  int      $level
      * @param  int      $lives
      * @param  Player[] $players
-     * @throws IllegalOptionException
+     * @throws \MiniGame\Exceptions\IllegalOptionException
      */
     public function __construct($word = null, $length = null, $level = null, $lives = 6, array $players = array()) {
         parent::__construct($lives, $players);
@@ -71,7 +71,7 @@ class HangmanOptions extends AbstractGameOptions implements GameOptions {
 
     /**
      * @param  int $level
-     * @throws IllegalOptionException
+     * @throws \MiniGame\Manager\Exceptions\IllegalOptionException
      */
     public function setLevel($level)
     {
@@ -92,7 +92,7 @@ class HangmanOptions extends AbstractGameOptions implements GameOptions {
 
     /**
      * @param  string $word
-     * @throws IllegalOptionException
+     * @throws \MiniGame\Exceptions\IllegalOptionException
      */
     public function setWord($word)
     {

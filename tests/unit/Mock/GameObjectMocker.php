@@ -4,12 +4,12 @@ namespace MiniGame\Test\Mock;
 use MiniGame\GameOptions;
 use MiniGame\GameResult;
 use MiniGame\Hangman\Hangman;
-use MiniGame\Hangman\Manager\HangmanManager;
 use MiniGame\Hangman\Options\HangmanOptions;
-use MiniGame\Manager\PlayerManager;
 use MiniGame\MiniGame;
 use MiniGame\Player;
 use MiniGame\Result\EndGame;
+use TwitterHangman\Hangman\Manager\HangmanManager;
+use TwitterMiniGame\Manager\PlayerManager;
 use WordSelector\WordSelector;
 
 trait GameObjectMocker
@@ -48,17 +48,6 @@ trait GameObjectMocker
     }
 
     /**
-     * @param Player $player
-     * @return PlayerManager
-     */
-    public function getPlayerManager(Player $player = null)
-    {
-        $manager = \Mockery::mock('\\MiniGame\\Manager\\PlayerManager');
-        $manager->shouldReceive('getPlayer')->andReturn($player);
-        return $manager;
-    }
-
-    /**
      * Returns a word selector
      *
      * @return WordSelector
@@ -82,23 +71,6 @@ trait GameObjectMocker
         $h->shouldReceive('getId')->andReturn($id);
 
         return $h;
-    }
-
-    /**
-     * Returns a hangman Manager
-     *
-     * @param  Hangman $hangman
-     * @return HangmanManager
-     */
-    public function getHangmanManager(Hangman $hangman = null)
-    {
-        $hm = \Mockery::mock('\\MiniGame\\Hangman\\Manager\\HangmanManager');
-        $hm->shouldReceive('createMiniGame')->andReturn($hangman);
-        $hm->shouldReceive('saveMiniGame')->andReturn($hangman);
-        $hm->shouldReceive('getMiniGame')->andReturn($hangman);
-        $hm->shouldReceive('getActiveMiniGameForPlayer')->andReturn($hangman);
-
-        return $hm;
     }
 
     /**
