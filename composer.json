@@ -18,20 +18,11 @@
         {
             "type": "vcs",
             "url": "git@bitbucket.org:remi-san/word-selector.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@bitbucket.org:remi-san/twitter-stream.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:Evaneos/Burrow.git"
         }
     ],
     "require": {
         "rhumsaa/uuid" : "~2.8",
-        "remi-san/word-selector" : "dev-master",
-        "remi-san/twitter-stream" : "dev-master"
+        "remi-san/word-selector" : "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.5",
