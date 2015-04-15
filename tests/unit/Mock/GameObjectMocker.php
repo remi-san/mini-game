@@ -44,19 +44,6 @@ trait GameObjectMocker
     }
 
     /**
-     * Returns a word selector
-     *
-     * @return WordSelector
-     */
-    public function getWordSelector()
-    {
-        $ws = \Mockery::mock('\\WordSelector\\WordSelector');
-        $ws->shouldReceive('getRandomWord')->andReturn('TYRANNOSAURUS');
-
-        return $ws;
-    }
-
-    /**
      * @param  string $text
      * @return GameResult
      */
