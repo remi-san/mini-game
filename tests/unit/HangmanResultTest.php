@@ -98,7 +98,6 @@ class HangmanResultTest extends \PHPUnit_Framework_TestCase {
      */
     public function testError()
     {
-        $solution = 'solution';
         $remainingChances = 0;
         $message = 'error';
 

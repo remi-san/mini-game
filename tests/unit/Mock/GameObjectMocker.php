@@ -8,8 +8,6 @@ use MiniGame\Hangman\Options\HangmanOptions;
 use MiniGame\MiniGame;
 use MiniGame\Player;
 use MiniGame\Result\EndGame;
-use TwitterHangman\Hangman\Manager\HangmanManager;
-use TwitterMiniGame\Manager\PlayerManager;
 use WordSelector\WordSelector;
 
 trait GameObjectMocker

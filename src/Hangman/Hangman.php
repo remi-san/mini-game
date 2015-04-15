@@ -195,7 +195,7 @@ class Hangman implements MiniGame {
     }
 
     /**
-     * Function to call when an arror must be returned
+     * Function to call when an error must be returned
      *
      * @param  Player $player
      * @param  string $message

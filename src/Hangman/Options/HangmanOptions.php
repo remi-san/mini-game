@@ -71,7 +71,7 @@ class HangmanOptions extends AbstractGameOptions implements GameOptions {
 
     /**
      * @param  int $level
-     * @throws \MiniGame\Manager\Exceptions\IllegalOptionException
+     * @throws IllegalOptionException
      */
     public function setLevel($level)
     {

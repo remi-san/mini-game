@@ -14,7 +14,7 @@ class HangmanError extends HangmanGameResult implements Error {
     /**
      * Constructor
      *
-     * @param Player $message
+     * @param string $message
      * @param Player $player
      * @param array  $lettersPlayed
      * @param int    $remainingChances
