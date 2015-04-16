@@ -24,4 +24,9 @@ abstract class AbstractGameResult implements GameResult {
     public function getPlayer() {
         return $this->player;
     }
+
+    /**
+     * @return string
+     */
+    public abstract function getAsMessage();
 } 
