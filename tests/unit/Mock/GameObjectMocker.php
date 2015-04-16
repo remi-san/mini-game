@@ -77,10 +77,13 @@ trait GameObjectMocker
     }
 
     /**
+     * @param  string $text
      * @return Move
      */
-    public function getMove()
+    public function getMove($text)
     {
-        return \Mockery::mock('\\MiniGame\\Move');
+        $move = \Mockery::mock('\\MiniGame\\Move');
+        $move->shouldReceive('getText')->andReturn($text);
+        return $move;
     }
 }
