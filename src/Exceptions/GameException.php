@@ -9,7 +9,7 @@ use MiniGame\Player;
 abstract class GameException extends \Exception {
 
     /**
-     * @var \MiniGame\Player
+     * @var Player
      */
     protected $player;
 
@@ -42,7 +42,7 @@ abstract class GameException extends \Exception {
     }
 
     /**
-     * @return \MiniGame\Player
+     * @return Player
      */
     public function getPlayer() {
         return $this->player;
