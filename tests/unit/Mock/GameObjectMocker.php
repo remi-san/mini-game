@@ -4,6 +4,7 @@ namespace MiniGame\Test\Mock;
 use MiniGame\GameOptions;
 use MiniGame\GameResult;
 use MiniGame\MiniGame;
+use MiniGame\Move;
 use MiniGame\Player;
 use MiniGame\Result\EndGame;
 use WordSelector\WordSelector;
@@ -73,5 +74,13 @@ trait GameObjectMocker
         $options = \Mockery::mock('\\MiniGame\\GameOptions');
 
         return $options;
+    }
+
+    /**
+     * @return Move
+     */
+    public function getMove()
+    {
+        return \Mockery::mock('\\MiniGame\\Move');
     }
 }

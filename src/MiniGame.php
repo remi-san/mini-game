@@ -20,10 +20,10 @@ interface MiniGame {
      * Allows the player to play the game
      *
      * @param  Player $player
-     * @param  string $answer
+     * @param  Move   $move
      * @return GameResult
      */
-    public function play(Player $player, $answer);
+    public function play(Player $player, Move $move);
 
     /**
      * Is it the player's turn?
