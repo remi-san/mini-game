@@ -1,6 +1,8 @@
 <?php
 namespace MiniGame\Repository;
 
+use MiniGame\Player;
+
 interface PlayerRepository {
 
     /**
@@ -45,4 +47,22 @@ interface PlayerRepository {
      * @return object The player.
      */
     public function findOneBy(array $criteria);
+
+    /**
+     * Saves a player
+     *
+     * @param  Player $player
+     *
+     * @return void
+     */
+    public function save(Player $player);
+
+    /**
+     * Deletes a player
+     *
+     * @param  Player $player
+     *
+     * @return void
+     */
+    public function delete(Player $player);
 } 
