@@ -2,6 +2,7 @@
 namespace MiniGame\Repository;
 
 use MiniGame\MiniGame;
+use MiniGame\Player;
 
 interface MiniGameRepository {
 
@@ -47,6 +48,18 @@ interface MiniGameRepository {
      * @return object The minigame.
      */
     public function findOneBy(array $criteria);
+
+    /**
+     * Gets the mini-game for the player
+     *
+     * @param  Player $player
+     *
+     * @return mixed
+     *
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function findPlayerMinigame(Player $player);
 
     /**
      * Saves a mini game
