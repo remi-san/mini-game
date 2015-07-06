@@ -8,6 +8,11 @@ use MiniGame\Test\Mock\GameObjectMocker;
 class ExceptionTest extends \PHPUnit_Framework_TestCase {
     use GameObjectMocker;
 
+    public function tearDown()
+    {
+        \Mockery::close();
+    }
+
     /**
      * @test
      */

@@ -28,6 +28,11 @@ class GameResultTest extends \PHPUnit_Framework_TestCase {
         $this->player = $this->getPlayer(42, 'douglas');
     }
 
+    public function tearDown()
+    {
+        \Mockery::close();
+    }
+
     /**
      * @test
      */
