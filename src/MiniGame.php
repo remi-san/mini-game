@@ -31,7 +31,7 @@ interface MiniGame {
      * @param  Player $player
      * @return bool
      */
-    public function canPlay(Player $player);
+    public function canPlayerPlay(Player $player);
 
     /**
      * Get the players
