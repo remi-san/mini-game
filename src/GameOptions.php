@@ -1,8 +1,8 @@
 <?php
 namespace MiniGame;
 
-interface GameOptions {
-
+interface GameOptions
+{
     /**
      * Return the list of players
      *

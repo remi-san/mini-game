@@ -4,8 +4,8 @@ namespace MiniGame\Options;
 use MiniGame\GameOptions;
 use MiniGame\Player;
 
-abstract class AbstractGameOptions implements GameOptions {
-
+abstract class AbstractGameOptions implements GameOptions
+{
     /**
      * @var Player[]
      */
@@ -22,7 +22,8 @@ abstract class AbstractGameOptions implements GameOptions {
      * @param $lives
      * @param Player[] $players
      */
-    public function __construct($lives, array $players = array()) {
+    public function __construct($lives, array $players = array())
+    {
         $this->lives = $lives;
         $this->players = $players;
     }
@@ -32,7 +33,8 @@ abstract class AbstractGameOptions implements GameOptions {
      *
      * @return Player[]
      */
-    public function getPlayers() {
+    public function getPlayers()
+    {
         return $this->players;
     }
 
@@ -42,14 +44,16 @@ abstract class AbstractGameOptions implements GameOptions {
      * @param Player $player
      * @return void
      */
-    public function addPlayer(Player $player) {
+    public function addPlayer(Player $player)
+    {
         $this->players[$player->getId()] = $player;
     }
 
     /**
      * @return int
      */
-    public function getLives() {
+    public function getLives()
+    {
         return $this->lives;
     }
-} 
+}

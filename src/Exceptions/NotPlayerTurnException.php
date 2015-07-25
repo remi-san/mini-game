@@ -1,4 +1,6 @@
 <?php
 namespace MiniGame\Exceptions;
 
-class NotPlayerTurnException extends GameException { }
+class NotPlayerTurnException extends GameException
+{
+}

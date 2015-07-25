@@ -1,4 +1,6 @@
 <?php
 namespace MiniGame\Result;
 
-interface GameLost extends EndGame { }
+interface GameLost extends EndGame
+{
+}

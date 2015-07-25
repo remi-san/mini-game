@@ -1,8 +1,8 @@
 <?php
 namespace MiniGame;
 
-interface MiniGame {
-
+interface MiniGame
+{
     /**
      * Returns the name of the mini-game
      * @return string
@@ -39,4 +39,4 @@ interface MiniGame {
      * @return Player[]
      */
     public function getPlayers();
-} 
+}

@@ -6,8 +6,8 @@ use MiniGame\GameResult;
 use MiniGame\MiniGame;
 use MiniGame\Player;
 
-abstract class GameException extends \Exception {
-
+abstract class GameException extends \Exception
+{
     /**
      * @var Player
      */
@@ -33,8 +33,14 @@ abstract class GameException extends \Exception {
      * @param int        $code
      * @param \Exception $previous
      */
-    public function __construct(Player $player, MiniGame $miniGame, GameResult $result=null, $message="", $code=0, \Exception $previous=null)
-    {
+    public function __construct(
+        Player $player,
+        MiniGame $miniGame,
+        GameResult $result = null,
+        $message = "",
+        $code = 0,
+        \Exception $previous = null
+    ) {
         $this->player = $player;
         $this->miniGame = $miniGame;
         $this->result = $result;
@@ -44,21 +50,24 @@ abstract class GameException extends \Exception {
     /**
      * @return Player
      */
-    public function getPlayer() {
+    public function getPlayer()
+    {
         return $this->player;
     }
 
     /**
      * @return MiniGame
      */
-    public function getMiniGame() {
+    public function getMiniGame()
+    {
         return $this->miniGame;
     }
 
     /**
      * @return GameResult
      */
-    public function getResult() {
+    public function getResult()
+    {
         return $this->result;
     }
 }

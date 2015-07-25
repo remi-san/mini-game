@@ -4,8 +4,8 @@ namespace MiniGame\Repository;
 use MiniGame\MiniGame;
 use MiniGame\Player;
 
-interface MiniGameRepository {
-
+interface MiniGameRepository
+{
     /**
      * Finds an minigame by its primary key / identifier.
      *
@@ -78,4 +78,4 @@ interface MiniGameRepository {
      * @return void
      */
     public function delete(MiniGame $game);
-} 
+}

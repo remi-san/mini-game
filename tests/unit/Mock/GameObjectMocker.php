@@ -7,11 +7,9 @@ use MiniGame\MiniGame;
 use MiniGame\Move;
 use MiniGame\Player;
 use MiniGame\Result\EndGame;
-use WordSelector\WordSelector;
 
 trait GameObjectMocker
 {
-
     /**
      * Returns a twitter player
      *

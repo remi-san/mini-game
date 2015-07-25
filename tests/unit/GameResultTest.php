@@ -1,19 +1,12 @@
 <?php
 namespace MiniGame\Test;
 
-use MiniGame\Options\AbstractGameOptions;
 use MiniGame\Player;
-use MiniGame\Result\AbstractGameResult;
 use MiniGame\Test\Mock\GameObjectMocker;
+use MiniGame\Test\Mock\TestGameResult;
 
-class TestGameResult extends AbstractGameResult {
-    public function getAsMessage()
-    {
-        return '';
-    }
-}
-
-class GameResultTest extends \PHPUnit_Framework_TestCase {
+class GameResultTest extends \PHPUnit_Framework_TestCase
+{
     use GameObjectMocker;
 
     const LIVES = 5;
@@ -42,4 +35,4 @@ class GameResultTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals($this->player, $options->getPlayer());
     }
-} 
+}

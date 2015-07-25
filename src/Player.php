@@ -1,8 +1,8 @@
 <?php
 namespace MiniGame;
 
-interface Player {
-
+interface Player
+{
     /**
      * Returns the id of the player
      *
@@ -16,4 +16,4 @@ interface Player {
      * @return string
      */
     public function getName();
-} 
+}

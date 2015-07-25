@@ -3,8 +3,8 @@ namespace MiniGame\Exceptions;
 
 use Exception;
 
-class IllegalOptionException extends \Exception {
-
+class IllegalOptionException extends \Exception
+{
     /**
      * @var $string
      */
@@ -24,7 +24,8 @@ class IllegalOptionException extends \Exception {
      * @param int        $code
      * @param \Exception $previous
      */
-    public function __construct($message, $optionName, $optionValue, $code = 0, \Exception $previous = null) {
+    public function __construct($message, $optionName, $optionValue, $code = 0, \Exception $previous = null)
+    {
         $this->optionName = $optionName;
         $this->optionValue = $optionValue;
         parent::__construct($message, $code, $previous);
@@ -45,4 +46,4 @@ class IllegalOptionException extends \Exception {
     {
         return $this->optionValue;
     }
-} 
+}

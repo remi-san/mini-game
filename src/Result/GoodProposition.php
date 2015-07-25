@@ -1,4 +1,6 @@
 <?php
 namespace MiniGame\Result;
 
-interface GoodProposition extends Proposition { }
+interface GoodProposition extends Proposition
+{
+}

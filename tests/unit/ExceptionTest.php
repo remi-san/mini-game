@@ -5,7 +5,8 @@ use MiniGame\Exceptions\IllegalMoveException;
 use MiniGame\Exceptions\IllegalOptionException;
 use MiniGame\Test\Mock\GameObjectMocker;
 
-class ExceptionTest extends \PHPUnit_Framework_TestCase {
+class ExceptionTest extends \PHPUnit_Framework_TestCase
+{
     use GameObjectMocker;
 
     public function tearDown()
@@ -16,7 +17,8 @@ class ExceptionTest extends \PHPUnit_Framework_TestCase {
     /**
      * @test
      */
-    public function testIllegalMoveException() {
+    public function testIllegalMoveException()
+    {
 
         $player = $this->getPlayer(33, 'Bugs');
         $miniGame = $this->getMiniGame(1, 'Game');
@@ -34,7 +36,8 @@ class ExceptionTest extends \PHPUnit_Framework_TestCase {
     /**
      * @test
      */
-    public function testIllegalOptionException() {
+    public function testIllegalOptionException()
+    {
 
         $optionName = 'opName';
         $optionValue = 'opValue';
@@ -43,5 +46,4 @@ class ExceptionTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($optionName, $exception->getOptionName());
         $this->assertEquals($optionValue, $exception->getOptionValue());
     }
-
-} 
+}

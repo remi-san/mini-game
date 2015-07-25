@@ -4,8 +4,8 @@ namespace MiniGame\Result;
 use MiniGame\Player;
 use MiniGame\GameResult;
 
-abstract class AbstractGameResult implements GameResult {
-
+abstract class AbstractGameResult implements GameResult
+{
     /**
      * @var Player
      */
@@ -14,19 +14,21 @@ abstract class AbstractGameResult implements GameResult {
     /**
      * @param Player $player
      */
-    public function __construct(Player $player) {
+    public function __construct(Player $player)
+    {
         $this->player = $player;
     }
 
     /**
      * @return Player
      */
-    public function getPlayer() {
+    public function getPlayer()
+    {
         return $this->player;
     }
 
     /**
      * @return string
      */
-    public abstract function getAsMessage();
-} 
+    abstract public function getAsMessage();
+}

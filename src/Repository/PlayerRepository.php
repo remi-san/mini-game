@@ -3,8 +3,8 @@ namespace MiniGame\Repository;
 
 use MiniGame\Player;
 
-interface PlayerRepository {
-
+interface PlayerRepository
+{
     /**
      * Finds an player by its primary key / identifier.
      *
@@ -65,4 +65,4 @@ interface PlayerRepository {
      * @return void
      */
     public function delete(Player $player);
-} 
+}

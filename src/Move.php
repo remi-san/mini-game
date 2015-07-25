@@ -1,7 +1,12 @@
 <?php
 namespace MiniGame;
 
-interface Move {
-
+interface Move
+{
+    /**
+     * Returns the text
+     *
+     * @return string
+     */
     public function getText();
 }

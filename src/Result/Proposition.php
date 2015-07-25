@@ -3,8 +3,8 @@ namespace MiniGame\Result;
 
 use MiniGame\GameResult;
 
-interface Proposition extends GameResult {
-
+interface Proposition extends GameResult
+{
     /**
      * @return string
      */

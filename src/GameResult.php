@@ -1,8 +1,8 @@
 <?php
 namespace MiniGame;
 
-interface GameResult {
-
+interface GameResult
+{
     /**
      * @return Player
      */
