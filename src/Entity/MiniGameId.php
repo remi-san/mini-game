@@ -1,6 +1,8 @@
 <?php
 namespace MiniGame\Entity;
 
+use Rhumsaa\Uuid\Uuid;
+
 class MiniGameId
 {
     /**
@@ -15,7 +17,7 @@ class MiniGameId
      */
     public function __construct($id)
     {
-        $this->id = $id;
+        $this->id = ($id) ? (string) $id : Uuid::uuid4()->toString();
     }
 
     /**
@@ -31,6 +33,6 @@ class MiniGameId
      */
     public function __toString()
     {
-        return $this->id;
+        return (string) $this->id;
     }
 }

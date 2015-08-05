@@ -15,8 +15,8 @@ trait GameObjectMocker
     /**
      * Returns a twitter player
      *
-     * @param  int $id
-     * @param  string $name
+     * @param  PlayerId $id
+     * @param  string   $name
      * @return Player
      */
     public function getPlayer($id = null, $name = null)
@@ -46,8 +46,8 @@ trait GameObjectMocker
     /**
      * Returns a mini game
      *
-     * @param  int $id
-     * @param  string $name
+     * @param  MiniGameId $id
+     * @param  string     $name
      * @return MiniGame
      */
     public function getMiniGame($id = null, $name = null)
