@@ -38,7 +38,7 @@ trait GameObjectMocker
     {
         $player = \Mockery::mock('\\MiniGame\\Entity\\PlayerId');
         $player->shouldReceive('getId')->andReturn($id);
-        $player->shouldReceive('__toString')->andReturn($id);
+        $player->shouldReceive('__toString')->andReturn((string)$id);
 
         return $player;
     }
@@ -69,7 +69,7 @@ trait GameObjectMocker
     {
         $player = \Mockery::mock('\\MiniGame\\Entity\\MiniGameId');
         $player->shouldReceive('getId')->andReturn($id);
-        $player->shouldReceive('__toString')->andReturn($id);
+        $player->shouldReceive('__toString')->andReturn((string)$id);
 
         return $player;
     }
