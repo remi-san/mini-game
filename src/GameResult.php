@@ -1,12 +1,14 @@
 <?php
 namespace MiniGame;
 
+use MiniGame\Entity\PlayerId;
+
 interface GameResult
 {
     /**
-     * @return Player
+     * @return PlayerId
      */
-    public function getPlayer();
+    public function getPlayerId();
 
     /**
      * @return string

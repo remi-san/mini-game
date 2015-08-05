@@ -1,15 +1,18 @@
 <?php
 namespace MiniGame\Repository;
 
-use MiniGame\MiniGame;
-use MiniGame\Player;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
+use MiniGame\Entity\MiniGame;
+use MiniGame\Entity\MiniGameId;
+use MiniGame\Entity\PlayerId;
 
 interface MiniGameRepository
 {
     /**
      * Finds an minigame by its primary key / identifier.
      *
-     * @param mixed $id The identifier.
+     * @param MiniGameId $id The identifier.
      *
      * @return object The minigame.
      */
@@ -18,7 +21,7 @@ interface MiniGameRepository
     /**
      * Finds all minigames in the repository.
      *
-     * @return array The minigames.
+     * @return MiniGame[] The minigames.
      */
     public function findAll();
 
@@ -34,7 +37,7 @@ interface MiniGameRepository
      * @param int|null   $limit
      * @param int|null   $offset
      *
-     * @return array The minigames.
+     * @return MiniGame[] The minigames.
      *
      * @throws \UnexpectedValueException
      */
@@ -45,21 +48,21 @@ interface MiniGameRepository
      *
      * @param array $criteria The criteria.
      *
-     * @return object The minigame.
+     * @return MiniGame The minigame.
      */
     public function findOneBy(array $criteria);
 
     /**
      * Gets the mini-game for the player
      *
-     * @param  Player $player
+     * @param  PlayerId $player
      *
-     * @return mixed
+     * @return MiniGame
      *
-     * @throws \Doctrine\ORM\NoResultException
-     * @throws \Doctrine\ORM\NonUniqueResultException
+     * @throws NoResultException
+     * @throws NonUniqueResultException
      */
-    public function findPlayerMinigame(Player $player);
+    public function findPlayerMinigame(PlayerId $player);
 
     /**
      * Saves a mini game

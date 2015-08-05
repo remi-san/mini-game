@@ -1,11 +1,13 @@
 <?php
 namespace MiniGame\Test\Mock;
 
+use MiniGame\Entity\MiniGame;
+use MiniGame\Entity\MiniGameId;
+use MiniGame\Entity\Player;
+use MiniGame\Entity\PlayerId;
 use MiniGame\GameOptions;
 use MiniGame\GameResult;
-use MiniGame\MiniGame;
 use MiniGame\Move;
-use MiniGame\Player;
 use MiniGame\Result\EndGame;
 
 trait GameObjectMocker
@@ -19,9 +21,24 @@ trait GameObjectMocker
      */
     public function getPlayer($id = null, $name = null)
     {
-        $player = \Mockery::mock('\\MiniGame\\Player');
+        $player = \Mockery::mock('\\MiniGame\\Entity\\Player');
         $player->shouldReceive('getId')->andReturn($id);
         $player->shouldReceive('getName')->andReturn($name);
+
+        return $player;
+    }
+
+    /**
+     * Returns a player id
+     *
+     * @param  int $id
+     * @return PlayerId
+     */
+    public function getPlayerId($id)
+    {
+        $player = \Mockery::mock('\\MiniGame\\Entity\\PlayerId');
+        $player->shouldReceive('getId')->andReturn($id);
+        $player->shouldReceive('__toString')->andReturn($id);
 
         return $player;
     }
@@ -35,11 +52,26 @@ trait GameObjectMocker
      */
     public function getMiniGame($id = null, $name = null)
     {
-        $miniGame = \Mockery::mock('\\MiniGame\\MiniGame');
+        $miniGame = \Mockery::mock('\\MiniGame\\Entity\\MiniGame');
         $miniGame->shouldReceive('getId')->andReturn($id);
         $miniGame->shouldReceive('getName')->andReturn($name);
 
         return $miniGame;
+    }
+
+    /**
+     * Returns a mini game id
+     *
+     * @param  int $id
+     * @return MiniGameId
+     */
+    public function getMiniGameId($id)
+    {
+        $player = \Mockery::mock('\\MiniGame\\Entity\\MiniGameId');
+        $player->shouldReceive('getId')->andReturn($id);
+        $player->shouldReceive('__toString')->andReturn($id);
+
+        return $player;
     }
 
     /**

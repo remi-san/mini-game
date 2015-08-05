@@ -1,5 +1,8 @@
 <?php
-namespace MiniGame;
+namespace MiniGame\Entity;
+
+use MiniGame\GameResult;
+use MiniGame\Move;
 
 interface MiniGame
 {
@@ -12,26 +15,26 @@ interface MiniGame
     /**
      * Returns the id of the game (unique string)
      *
-     * @return string
+     * @return MiniGameId
      */
     public function getId();
 
     /**
      * Allows the player to play the game
      *
-     * @param  Player $player
-     * @param  Move   $move
+     * @param  PlayerId $player
+     * @param  Move     $move
      * @return GameResult
      */
-    public function play(Player $player, Move $move);
+    public function play(PlayerId $player, Move $move);
 
     /**
      * Is it the player's turn?
      *
-     * @param  Player $player
+     * @param  PlayerId $player
      * @return bool
      */
-    public function canPlayerPlay(Player $player);
+    public function canPlayerPlay(PlayerId $player);
 
     /**
      * Get the players

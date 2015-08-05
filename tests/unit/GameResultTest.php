@@ -1,7 +1,8 @@
 <?php
 namespace MiniGame\Test;
 
-use MiniGame\Player;
+use MiniGame\Entity\MiniGameId;
+use MiniGame\Entity\PlayerId;
 use MiniGame\Test\Mock\GameObjectMocker;
 use MiniGame\Test\Mock\TestGameResult;
 
@@ -9,16 +10,20 @@ class GameResultTest extends \PHPUnit_Framework_TestCase
 {
     use GameObjectMocker;
 
-    const LIVES = 5;
+    /**
+     * @var PlayerId
+     */
+    private $playerId;
 
     /**
-     * @var Player
+     * @var MiniGameId
      */
-    private $player;
+    private $gameId;
 
     public function setUp()
     {
-        $this->player = $this->getPlayer(42, 'douglas');
+        $this->playerId = $this->getPlayerId(42);
+        $this->gameId = $this->getMiniGameId(666);
     }
 
     public function tearDown()
@@ -31,8 +36,9 @@ class GameResultTest extends \PHPUnit_Framework_TestCase
      */
     public function test()
     {
-        $options = new TestGameResult($this->player);
+        $options = new TestGameResult($this->gameId, $this->playerId);
 
-        $this->assertEquals($this->player, $options->getPlayer());
+        $this->assertEquals($this->playerId, $options->getPlayerId());
+        $this->assertEquals($this->gameId, $options->getGameId());
     }
 }

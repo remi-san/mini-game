@@ -1,7 +1,7 @@
 <?php
 namespace MiniGame\Test;
 
-use MiniGame\Player;
+use MiniGame\Entity\Player;
 use MiniGame\Test\Mock\GameObjectMocker;
 use MiniGame\Test\Mock\TestGameOptions;
 
@@ -12,7 +12,7 @@ class GameOptionsTest extends \PHPUnit_Framework_TestCase
     const LIVES = 5;
 
     /**
-     * @var Player
+     * @var \MiniGame\Entity\Player
      */
     private $player;
 
@@ -31,14 +31,6 @@ class GameOptionsTest extends \PHPUnit_Framework_TestCase
      */
     public function test()
     {
-        $options = new TestGameOptions(self::LIVES);
-
-        $this->assertEquals(self::LIVES, $options->getLives());
-        $this->assertEquals(array(), $options->getPlayers());
-
-        $options->addPlayer($this->player);
-        $this->assertEquals(array(42 => $this->player), $options->getPlayers());
-
         $options = new TestGameOptions(self::LIVES, array($this->player));
 
         $this->assertEquals(self::LIVES, $options->getLives());

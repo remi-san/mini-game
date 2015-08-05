@@ -1,20 +1,20 @@
 <?php
 namespace MiniGame\Options;
 
+use MiniGame\Entity\Player;
 use MiniGame\GameOptions;
-use MiniGame\Player;
 
 abstract class AbstractGameOptions implements GameOptions
 {
     /**
      * @var Player[]
      */
-    protected $players;
+    private $players;
 
     /**
      * @var int
      */
-    protected $lives;
+    private $lives;
 
     /**
      * Constructor
@@ -36,17 +36,6 @@ abstract class AbstractGameOptions implements GameOptions
     public function getPlayers()
     {
         return $this->players;
-    }
-
-    /**
-     * Adds a player
-     *
-     * @param Player $player
-     * @return void
-     */
-    public function addPlayer(Player $player)
-    {
-        $this->players[$player->getId()] = $player;
     }
 
     /**

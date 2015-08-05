@@ -1,30 +1,48 @@
 <?php
 namespace MiniGame\Result;
 
-use MiniGame\Player;
+use MiniGame\Entity\MiniGameId;
+use MiniGame\Entity\PlayerId;
 use MiniGame\GameResult;
 
 abstract class AbstractGameResult implements GameResult
 {
     /**
-     * @var Player
+     * @var PlayerId
      */
-    protected $player;
+    private $playerId;
 
     /**
-     * @param Player $player
+     * @var MiniGameId
      */
-    public function __construct(Player $player)
+    private $gameId;
+
+    /**
+     * Constructor
+     *
+     * @param MiniGameId $gameId
+     * @param PlayerId   $playerId
+     */
+    public function __construct(MiniGameId $gameId, PlayerId $playerId)
     {
-        $this->player = $player;
+        $this->gameId = $gameId;
+        $this->playerId = $playerId;
     }
 
     /**
-     * @return Player
+     * @return MiniGameId
      */
-    public function getPlayer()
+    public function getGameId()
     {
-        return $this->player;
+        return $this->gameId;
+    }
+
+    /**
+     * @return PlayerId
+     */
+    public function getPlayerId()
+    {
+        return $this->playerId;
     }
 
     /**

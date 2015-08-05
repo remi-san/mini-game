@@ -1,23 +1,23 @@
 <?php
 namespace MiniGame\Exceptions;
 
-use MiniGame\MiniGame;
-use MiniGame\Move;
-use MiniGame\Player;
+use MiniGame\Entity\MiniGameId;
+use MiniGame\Entity\PlayerId;
 use MiniGame\GameResult;
+use MiniGame\Move;
 
 class IllegalMoveException extends GameException
 {
     /**
      * @var string
      */
-    protected $move;
+    private $move;
 
     /**
      * Constructor
      *
-     * @param Player     $player
-     * @param MiniGame   $miniGame
+     * @param PlayerId   $playerId
+     * @param MiniGameId $miniGameId
      * @param GameResult $result
      * @param Move       $move
      * @param string     $message
@@ -25,8 +25,8 @@ class IllegalMoveException extends GameException
      * @param \Exception $previous
      */
     public function __construct(
-        Player $player,
-        MiniGame $miniGame,
+        PlayerId $playerId,
+        MiniGameId $miniGameId,
         GameResult $result = null,
         Move $move = null,
         $message = "",
@@ -34,7 +34,7 @@ class IllegalMoveException extends GameException
         \Exception $previous = null
     ) {
         $this->move = $move;
-        parent::__construct($player, $miniGame, $result, $message, $code, $previous);
+        parent::__construct($playerId, $miniGameId, $result, $message, $code, $previous);
     }
 
     /**

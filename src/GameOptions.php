@@ -1,6 +1,8 @@
 <?php
 namespace MiniGame;
 
+use MiniGame\Entity\Player;
+
 interface GameOptions
 {
     /**
@@ -9,14 +11,6 @@ interface GameOptions
      * @return Player[]
      */
     public function getPlayers();
-
-    /**
-     * Add a player
-     *
-     * @param Player $player
-     * @return void
-     */
-    public function addPlayer(Player $player);
 
     /**
      * Get the number of lives for the game

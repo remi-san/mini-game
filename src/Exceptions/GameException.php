@@ -2,65 +2,65 @@
 namespace MiniGame\Exceptions;
 
 use Exception;
+use MiniGame\Entity\MiniGameId;
+use MiniGame\Entity\PlayerId;
 use MiniGame\GameResult;
-use MiniGame\MiniGame;
-use MiniGame\Player;
 
 abstract class GameException extends \Exception
 {
     /**
-     * @var Player
+     * @var PlayerId
      */
-    protected $player;
+    private $playerId;
 
     /**
-     * @var MiniGame
+     * @var MiniGameId
      */
-    protected $miniGame;
+    private $miniGameId;
 
     /**
      * @var GameResult
      */
-    protected $result;
+    private $result;
 
     /**
      * Constructor
      *
-     * @param Player     $player
-     * @param MiniGame   $miniGame
+     * @param PlayerId   $playerId
+     * @param MiniGameId $miniGameId
      * @param GameResult $result
      * @param string     $message
      * @param int        $code
      * @param \Exception $previous
      */
     public function __construct(
-        Player $player,
-        MiniGame $miniGame,
+        PlayerId $playerId,
+        MiniGameId $miniGameId,
         GameResult $result = null,
         $message = "",
         $code = 0,
         \Exception $previous = null
     ) {
-        $this->player = $player;
-        $this->miniGame = $miniGame;
+        $this->playerId = $playerId;
+        $this->miniGameId = $miniGameId;
         $this->result = $result;
         parent::__construct($message, $code, $previous);
     }
 
     /**
-     * @return Player
+     * @return PlayerId
      */
-    public function getPlayer()
+    public function getPlayerId()
     {
-        return $this->player;
+        return $this->playerId;
     }
 
     /**
-     * @return MiniGame
+     * @return MiniGameId
      */
-    public function getMiniGame()
+    public function getMiniGameId()
     {
-        return $this->miniGame;
+        return $this->miniGameId;
     }
 
     /**

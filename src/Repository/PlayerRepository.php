@@ -1,23 +1,24 @@
 <?php
 namespace MiniGame\Repository;
 
-use MiniGame\Player;
+use MiniGame\Entity\Player;
+use MiniGame\Entity\PlayerId;
 
 interface PlayerRepository
 {
     /**
      * Finds an player by its primary key / identifier.
      *
-     * @param mixed $id The identifier.
+     * @param PlayerId $id The identifier.
      *
-     * @return object The player.
+     * @return Player The player.
      */
     public function find($id);
 
     /**
      * Finds all players in the repository.
      *
-     * @return array The players.
+     * @return Player[] The players.
      */
     public function findAll();
 
@@ -33,7 +34,7 @@ interface PlayerRepository
      * @param int|null   $limit
      * @param int|null   $offset
      *
-     * @return array The players.
+     * @return Player[] The players.
      *
      * @throws \UnexpectedValueException
      */
@@ -44,7 +45,7 @@ interface PlayerRepository
      *
      * @param array $criteria The criteria.
      *
-     * @return object The player.
+     * @return Player The player.
      */
     public function findOneBy(array $criteria);
 

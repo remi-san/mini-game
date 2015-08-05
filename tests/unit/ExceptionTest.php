@@ -20,15 +20,15 @@ class ExceptionTest extends \PHPUnit_Framework_TestCase
     public function testIllegalMoveException()
     {
 
-        $player = $this->getPlayer(33, 'Bugs');
-        $miniGame = $this->getMiniGame(1, 'Game');
+        $player = $this->getPlayerId(33);
+        $miniGame = $this->getMiniGameId(1);
         $result = $this->getGameResult('result');
         $move = $this->getMove('Up');
 
         $exception = new IllegalMoveException($player, $miniGame, $result, $move, 'Oh! oh!');
 
-        $this->assertEquals($player, $exception->getPlayer());
-        $this->assertEquals($miniGame, $exception->getMiniGame());
+        $this->assertEquals($player, $exception->getPlayerId());
+        $this->assertEquals($miniGame, $exception->getMiniGameId());
         $this->assertEquals($result, $exception->getResult());
         $this->assertEquals($move, $exception->getMove());
     }
