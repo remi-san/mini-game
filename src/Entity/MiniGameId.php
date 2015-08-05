@@ -15,7 +15,7 @@ class MiniGameId
      *
      * @param string $id
      */
-    public function __construct($id)
+    public function __construct($id = null)
     {
         $this->id = ($id) ? (string) $id : Uuid::uuid4()->toString();
     }

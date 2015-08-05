@@ -30,5 +30,5 @@ interface Player
      * @param  MiniGame $game
      * @return void
      */
-    public function setGame(MiniGame $game);
+    public function setGame(MiniGame $game); // TODO delete
 }

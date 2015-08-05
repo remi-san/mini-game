@@ -14,7 +14,9 @@
             "role": "Developer"
         }
     ],
-    "require": {},
+    "require": {
+        "ramsey/uuid": "~2.8"
+    },
     "require-dev": {
         "phpunit/phpunit": "~4.5",
         "Mockery/Mockery": "~0.9"
