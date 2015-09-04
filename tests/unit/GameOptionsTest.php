@@ -31,9 +31,8 @@ class GameOptionsTest extends \PHPUnit_Framework_TestCase
      */
     public function test()
     {
-        $options = new TestGameOptions(self::LIVES, array($this->player));
+        $options = new TestGameOptions(array($this->player));
 
-        $this->assertEquals(self::LIVES, $options->getLives());
         $this->assertEquals(array($this->player), $options->getPlayers());
     }
 }

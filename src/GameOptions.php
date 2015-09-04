@@ -11,11 +11,4 @@ interface GameOptions
      * @return Player[]
      */
     public function getPlayers();
-
-    /**
-     * Get the number of lives for the game
-     *
-     * @return int
-     */
-    public function getLives();
 }
