@@ -7,10 +7,6 @@ use MiniGame\GameOptions;
 
 abstract class AbstractGameOptions implements GameOptions
 {
-    /**
-     * @var MiniGameId
-     */
-    private $id;
 
     /**
      * @var Player[]
@@ -20,21 +16,11 @@ abstract class AbstractGameOptions implements GameOptions
     /**
      * Constructor
      *
-     * @param MiniGameId $id
      * @param Player[]   $players
      */
-    public function __construct(MiniGameId $id, array $players = array())
+    public function __construct(array $players = array())
     {
-        $this->id = $id;
         $this->players = $players;
-    }
-
-    /**
-     * @return MiniGameId
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 
     /**
