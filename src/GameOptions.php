@@ -1,7 +1,6 @@
 <?php
 namespace MiniGame;
 
-use MiniGame\Entity\MiniGameId;
 use MiniGame\Entity\Player;
 
 interface GameOptions

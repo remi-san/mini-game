@@ -2,8 +2,10 @@
 namespace MiniGame\Entity;
 
 use Broadway\Domain\AggregateRoot;
+use MiniGame\GameOptions;
 use MiniGame\GameResult;
 use MiniGame\Move;
+use MiniGame\PlayerOptions;
 
 interface MiniGame extends AggregateRoot
 {
@@ -19,6 +21,21 @@ interface MiniGame extends AggregateRoot
      * @return MiniGameId
      */
     public function getId();
+
+    /**
+     * Starts the game
+     *
+     * @return void
+     */
+    public function startGame();
+
+    /**
+     * Adds a player to the game
+     *
+     * @param  PlayerOptions $playerOptions
+     * @return void
+     */
+    public function addPlayerToGame(PlayerOptions $playerOptions);
 
     /**
      * Allows the player to play the game

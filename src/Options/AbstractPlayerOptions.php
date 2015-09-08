@@ -1,7 +1,9 @@
 <?php
 namespace MiniGame\Options;
 
-class AbstractPlayerOptions
+use MiniGame\PlayerOptions;
+
+class AbstractPlayerOptions implements PlayerOptions
 {
 
 }
