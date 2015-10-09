@@ -1,7 +1,6 @@
 <?php
 namespace MiniGame\Test;
 
-use MiniGame\Entity\MiniGameId;
 use MiniGame\Entity\Player;
 use MiniGame\Test\Mock\GameObjectMocker;
 use MiniGame\Test\Mock\TestGameOptions;

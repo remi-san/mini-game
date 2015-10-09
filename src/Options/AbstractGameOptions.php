@@ -7,7 +7,6 @@ use MiniGame\GameOptions;
 
 abstract class AbstractGameOptions implements GameOptions
 {
-
     /**
      * @var Player[]
      */
