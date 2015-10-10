@@ -53,18 +53,6 @@ interface MiniGameRepository
     public function findOneBy(array $criteria);
 
     /**
-     * Gets the mini-game for the player
-     *
-     * @param  PlayerId $player
-     *
-     * @return MiniGame
-     *
-     * @throws NoResultException
-     * @throws NonUniqueResultException
-     */
-    public function findPlayerMinigame(PlayerId $player);
-
-    /**
      * Saves a mini game
      *
      * @param  MiniGame $game
