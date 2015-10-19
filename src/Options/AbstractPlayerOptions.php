@@ -1,6 +1,7 @@
 <?php
 namespace MiniGame\Options;
 
+use MiniGame\Entity\MiniGameId;
 use MiniGame\Entity\PlayerId;
 use MiniGame\PlayerOptions;
 
@@ -12,6 +13,11 @@ class AbstractPlayerOptions implements PlayerOptions
     private $playerId;
 
     /**
+     * @var MiniGameId
+     */
+    private $gameId;
+
+    /**
      * @var string
      */
     private $name;
@@ -19,12 +25,14 @@ class AbstractPlayerOptions implements PlayerOptions
     /**
      * Constructor
      *
-     * @param PlayerId $playerId
-     * @param string   $name
+     * @param PlayerId   $playerId
+     * @param MiniGameId $gameId
+     * @param string     $name
      */
-    public function __construct(PlayerId $playerId, $name)
+    public function __construct(PlayerId $playerId, MiniGameId $gameId, $name)
     {
         $this->playerId = $playerId;
+        $this->gameId = $gameId;
         $this->name = $name;
     }
 
@@ -34,6 +42,14 @@ class AbstractPlayerOptions implements PlayerOptions
     public function getPlayerId()
     {
         return $this->playerId;
+    }
+
+    /**
+     * @return MiniGameId
+     */
+    public function getGameId()
+    {
+        return $this->gameId;
     }
 
     /**

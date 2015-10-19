@@ -23,10 +23,12 @@ class PlayerOptionsTest extends \PHPUnit_Framework_TestCase
     public function test()
     {
         $id = $this->getPlayerId(42);
+        $gameId = $this->getMiniGameId(666);
 
-        $options = new TestPlayerOptions($id, 'toto');
+        $options = new TestPlayerOptions($id, $gameId, 'toto');
 
         $this->assertEquals($id, $options->getPlayerId());
+        $this->assertEquals($gameId, $options->getGameId());
         $this->assertEquals('toto', $options->getName());
     }
 }
