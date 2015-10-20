@@ -8,6 +8,7 @@ use MiniGame\Entity\PlayerId;
 use MiniGame\GameOptions;
 use MiniGame\GameResult;
 use MiniGame\Move;
+use MiniGame\PlayerOptions;
 use MiniGame\Result\EndGame;
 
 trait GameObjectMocker
@@ -27,6 +28,22 @@ trait GameObjectMocker
         $player->shouldReceive('getName')->andReturn($name);
         $player->shouldReceive('setGame');
         $player->shouldReceive('getGame')->andReturn($miniGame);
+
+        return $player;
+    }
+
+    /**
+     * Returns a twitter player
+     *
+     * @param  PlayerId   $playerId
+     * @param  MiniGameId $miniGameId
+     * @return PlayerOptions
+     */
+    public function getPlayerOptions(PlayerId $playerId = null, MiniGameId $miniGameId = null)
+    {
+        $player = \Mockery::mock('\\MiniGame\\PlayerOptions');
+        $player->shouldReceive('getPlayerId')->andReturn($playerId);
+        $player->shouldReceive('getGameId')->andReturn($miniGameId);
 
         return $player;
     }
