@@ -19,15 +19,16 @@ trait GameObjectMocker
      * @param  PlayerId $id
      * @param  string   $name
      * @param  MiniGame $miniGame
+     * @param  string   $externalReference
      * @return Player
      */
-    public function getPlayer($id = null, $name = null, MiniGame $miniGame = null)
+    public function getPlayer($id = null, $name = null, MiniGame $miniGame = null, $externalReference = null)
     {
         $player = \Mockery::mock('\\MiniGame\\Entity\\Player');
         $player->shouldReceive('getId')->andReturn($id);
         $player->shouldReceive('getName')->andReturn($name);
-        $player->shouldReceive('setGame');
         $player->shouldReceive('getGame')->andReturn($miniGame);
+        $player->shouldReceive('getExternalReference')->andReturn($externalReference);
 
         return $player;
     }
