@@ -30,12 +30,4 @@ interface Player
      * @return string
      */
     public function getExternalReference();
-
-    /**
-     * Sets the game
-     *
-     * @param  MiniGame $game
-     * @return void
-     */
-    public function setGame(MiniGame $game); // TODO delete
 }
