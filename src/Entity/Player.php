@@ -25,6 +25,13 @@ interface Player
     public function getGame();
 
     /**
+     * Returns the external reference
+     *
+     * @return string
+     */
+    public function getExternalReference();
+
+    /**
      * Sets the game
      *
      * @param  MiniGame $game
