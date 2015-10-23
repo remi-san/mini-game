@@ -1,13 +1,11 @@
 <?php
 namespace MiniGame\Entity;
 
-use Broadway\Domain\AggregateRoot;
-use MiniGame\GameOptions;
 use MiniGame\GameResult;
 use MiniGame\Move;
 use MiniGame\PlayerOptions;
 
-interface MiniGame extends AggregateRoot
+interface MiniGame
 {
     /**
      * Returns the name of the mini-game
