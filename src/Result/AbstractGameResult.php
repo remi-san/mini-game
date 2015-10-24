@@ -8,14 +8,14 @@ use MiniGame\GameResult;
 abstract class AbstractGameResult implements GameResult
 {
     /**
-     * @var PlayerId
-     */
-    private $playerId;
-
-    /**
      * @var MiniGameId
      */
     private $gameId;
+
+    /**
+     * @var PlayerId
+     */
+    private $playerId;
 
     /**
      * Constructor
