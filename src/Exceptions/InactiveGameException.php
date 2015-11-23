@@ -1,6 +1,6 @@
 <?php
 namespace MiniGame\Exceptions;
 
-class InactiveGameException extends GameException
+class InactiveGameException extends \Exception
 {
 }
