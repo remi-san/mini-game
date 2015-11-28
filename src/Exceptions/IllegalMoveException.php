@@ -6,7 +6,7 @@ use MiniGame\Entity\PlayerId;
 use MiniGame\GameResult;
 use MiniGame\Move;
 
-class IllegalMoveException extends GameException
+class IllegalMoveException extends \Exception
 {
     /**
      * @var string
@@ -16,25 +16,19 @@ class IllegalMoveException extends GameException
     /**
      * Constructor
      *
-     * @param PlayerId   $playerId
-     * @param MiniGameId $miniGameId
-     * @param GameResult $result
      * @param Move       $move
      * @param string     $message
      * @param int        $code
      * @param \Exception $previous
      */
     public function __construct(
-        PlayerId $playerId,
-        MiniGameId $miniGameId,
-        GameResult $result = null,
         Move $move = null,
         $message = "",
         $code = 0,
         \Exception $previous = null
     ) {
         $this->move = $move;
-        parent::__construct($playerId, $miniGameId, $result, $message, $code, $previous);
+        parent::__construct($message, $code, $previous);
     }
 
     /**
