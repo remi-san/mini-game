@@ -1,21 +1,20 @@
 <?php
 namespace MiniGame\Options;
 
-use MiniGame\Entity\MiniGameId;
-use MiniGame\Entity\Player;
 use MiniGame\GameOptions;
+use MiniGame\PlayerOptions;
 
 abstract class AbstractGameOptions implements GameOptions
 {
     /**
-     * @var Player[]
+     * @var PlayerOptions[]
      */
     private $players;
 
     /**
      * Constructor
      *
-     * @param Player[]   $players
+     * @param PlayerOptions[]   $players
      */
     public function __construct(array $players = array())
     {
@@ -25,9 +24,9 @@ abstract class AbstractGameOptions implements GameOptions
     /**
      * Returns the list of players
      *
-     * @return Player[]
+     * @return PlayerOptions[]
      */
-    public function getPlayers()
+    public function getPlayerOptions()
     {
         return $this->players;
     }

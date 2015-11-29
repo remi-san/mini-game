@@ -33,6 +33,6 @@ class GameOptionsTest extends \PHPUnit_Framework_TestCase
     {
         $options = new TestGameOptions(array($this->player));
 
-        $this->assertEquals(array($this->player), $options->getPlayers());
+        $this->assertEquals(array($this->player), $options->getPlayerOptions());
     }
 }
