@@ -9,16 +9,16 @@ abstract class AbstractGameOptions implements GameOptions
     /**
      * @var PlayerOptions[]
      */
-    private $players;
+    private $playerOptions;
 
     /**
      * Constructor
      *
-     * @param PlayerOptions[]   $players
+     * @param PlayerOptions[]   $playerOptions
      */
-    public function __construct(array $players = array())
+    public function __construct(array $playerOptions = array())
     {
-        $this->players = $players;
+        $this->playerOptions = $playerOptions;
     }
 
     /**
@@ -28,6 +28,6 @@ abstract class AbstractGameOptions implements GameOptions
      */
     public function getPlayerOptions()
     {
-        return $this->players;
+        return $this->playerOptions;
     }
 }
