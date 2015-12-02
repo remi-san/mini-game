@@ -26,7 +26,7 @@ interface MiniGame extends AggregateRoot
      *
      * @param  PlayerId $playerId
      *
-     * @return void
+     * @return GameResult
      */
     public function startGame(PlayerId $playerId = null);
 
@@ -34,7 +34,7 @@ interface MiniGame extends AggregateRoot
      * Adds a player to the game
      *
      * @param  PlayerOptions $playerOptions
-     * @return void
+     * @return GameResult
      */
     public function addPlayerToGame(PlayerOptions $playerOptions);
 
