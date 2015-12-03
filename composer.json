@@ -15,7 +15,6 @@
         }
     ],
     "require": {
-        "broadway/broadway" : "~0.8.0",
         "ramsey/uuid": "~2.8"
     },
     "require-dev": {

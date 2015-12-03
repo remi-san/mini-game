@@ -1,12 +1,11 @@
 <?php
 namespace MiniGame\Entity;
 
-use Broadway\Domain\AggregateRoot;
 use MiniGame\GameResult;
 use MiniGame\Move;
 use MiniGame\PlayerOptions;
 
-interface MiniGame extends AggregateRoot
+interface MiniGame
 {
     /**
      * Returns the name of the mini-game
@@ -61,4 +60,9 @@ interface MiniGame extends AggregateRoot
      * @return Player[]
      */
     public function getPlayers();
+
+    /**
+     * @return \IteratorAggregate
+     */
+    public function getUncommittedEvents();
 }
