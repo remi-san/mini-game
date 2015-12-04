@@ -1,9 +1,6 @@
 <?php
 namespace MiniGame\Exceptions;
 
-use MiniGame\Entity\MiniGameId;
-use MiniGame\Entity\PlayerId;
-use MiniGame\GameResult;
 use MiniGame\Move;
 
 class IllegalMoveException extends \Exception

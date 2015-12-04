@@ -1,7 +1,6 @@
 <?php
 namespace MiniGame\Exceptions;
 
-use Exception;
 use MiniGame\Entity\MiniGameId;
 use MiniGame\Entity\PlayerId;
 
