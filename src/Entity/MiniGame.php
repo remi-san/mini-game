@@ -62,7 +62,7 @@ interface MiniGame
     public function getPlayers();
 
     /**
-     * @return \IteratorAggregate
+     * @return array
      */
     public function getUncommittedEvents();
 }
