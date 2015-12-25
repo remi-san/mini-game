@@ -27,7 +27,7 @@ interface MiniGame
      *
      * @return GameResult
      */
-    public function startGame(PlayerId $playerId = null);
+    public function startGame(PlayerId $playerId);
 
     /**
      * Adds a player to the game
