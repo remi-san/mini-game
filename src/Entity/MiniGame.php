@@ -60,9 +60,4 @@ interface MiniGame
      * @return Player[]
      */
     public function getPlayers();
-
-    /**
-     * @return array
-     */
-    public function getUncommittedEvents(); // TODO delete
 }
