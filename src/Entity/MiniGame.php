@@ -38,6 +38,14 @@ interface MiniGame
     public function addPlayerToGame(PlayerOptions $playerOptions);
 
     /**
+     * A player leaves the game
+     *
+     * @param PlayerId $playerId
+     * @return GameResult
+     */
+    public function leaveGame(PlayerId $playerId);
+
+    /**
      * Allows the player to play the game
      *
      * @param  PlayerId $player
