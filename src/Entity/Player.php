@@ -30,4 +30,18 @@ interface Player
      * @return string
      */
     public function getExternalReference();
+
+    /**
+     * Has player lost?
+     *
+     * @return bool
+     */
+    public function hasLost();
+
+    /**
+     * Has player won?
+     *
+     * @return bool
+     */
+    public function hasWon();
 }
