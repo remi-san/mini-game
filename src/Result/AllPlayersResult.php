@@ -1,6 +1,6 @@
 <?php
 namespace MiniGame\Result;
 
-interface Broadcast
+interface AllPlayersResult
 {
 }
