@@ -1,6 +1,8 @@
 <?php
 namespace MiniGame\Result;
 
-interface AllPlayersResult
+use MiniGame\GameResult;
+
+interface AllPlayersResult extends GameResult
 {
 }
