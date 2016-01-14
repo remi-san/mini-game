@@ -21,11 +21,12 @@ class PlayerId
     }
 
     /**
-     * @return string
+     * @param  PlayerId $id
+     * @return bool
      */
-    public function getId()
+    public function equals(PlayerId $id)
     {
-        return $this->id;
+        return $this->id === $id->id;
     }
 
     /**

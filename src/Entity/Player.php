@@ -44,4 +44,10 @@ interface Player
      * @return bool
      */
     public function hasWon();
+
+    /**
+     * @param  Player $player
+     * @return mixed
+     */
+    public function equals(Player $player);
 }

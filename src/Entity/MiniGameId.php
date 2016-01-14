@@ -21,11 +21,12 @@ class MiniGameId
     }
 
     /**
-     * @return string
+     * @param  MiniGameId $id
+     * @return bool
      */
-    public function getId()
+    public function equals(MiniGameId $id)
     {
-        return $this->id;
+        return $this->id === $id->id;
     }
 
     /**

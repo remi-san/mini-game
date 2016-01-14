@@ -18,8 +18,7 @@ class GameIdTest extends \PHPUnit_Framework_TestCase
     {
         $id = new MiniGameId();
 
-        $this->assertTrue(Uuid::isValid($id->getId()));
-        $this->assertTrue(Uuid::isValid($id->__toString()));
+        $this->assertTrue(Uuid::isValid((string) $id));
     }
 
     public function testGivenId()
@@ -27,7 +26,6 @@ class GameIdTest extends \PHPUnit_Framework_TestCase
         $vId = 42;
         $id = new MiniGameId($vId);
 
-        $this->assertEquals($vId, $id->getId());
-        $this->assertEquals($vId, $id->__toString());
+        $this->assertEquals($vId, (string) $id);
     }
 }
