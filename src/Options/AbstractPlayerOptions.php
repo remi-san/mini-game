@@ -31,6 +31,18 @@ class AbstractPlayerOptions implements PlayerOptions
      */
     public function __construct(PlayerId $playerId, MiniGameId $gameId, $name)
     {
+        $this->init($playerId, $gameId, $name);
+    }
+
+    /**
+     * Init.
+     *
+     * @param PlayerId   $playerId
+     * @param MiniGameId $gameId
+     * @param string     $name
+     */
+    protected function init(PlayerId $playerId, MiniGameId $gameId, $name)
+    {
         $this->playerId = $playerId;
         $this->gameId = $gameId;
         $this->name = $name;
