@@ -18,6 +18,16 @@ abstract class AbstractGameOptions implements GameOptions
      */
     public function __construct(array $playerOptions = array())
     {
+        $this->init($playerOptions);
+    }
+
+    /**
+     * Init.
+     *
+     * @param PlayerOptions[]   $playerOptions
+     */
+    protected function init(array $playerOptions)
+    {
         $this->playerOptions = $playerOptions;
     }
 
