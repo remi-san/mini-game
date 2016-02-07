@@ -10,17 +10,17 @@ class AbstractPlayerOptions implements PlayerOptions
     /**
      * @var PlayerId
      */
-    private $playerId;
+    protected $playerId;
 
     /**
      * @var MiniGameId
      */
-    private $gameId;
+    protected $gameId;
 
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * Constructor

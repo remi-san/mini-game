@@ -9,7 +9,7 @@ abstract class AbstractGameOptions implements GameOptions
     /**
      * @var PlayerOptions[]
      */
-    private $playerOptions;
+    protected $playerOptions;
 
     /**
      * Constructor
