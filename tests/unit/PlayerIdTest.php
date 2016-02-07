@@ -16,7 +16,7 @@ class PlayerIdTest extends \PHPUnit_Framework_TestCase
      */
     public function testGenerateId()
     {
-        $id = new PlayerId();
+        $id = PlayerId::create();
 
         $this->assertTrue(Uuid::isValid((string) $id));
     }
@@ -24,7 +24,7 @@ class PlayerIdTest extends \PHPUnit_Framework_TestCase
     public function testGivenId()
     {
         $vId = 42;
-        $id = new PlayerId($vId);
+        $id = PlayerId::create($vId);
 
         $this->assertEquals($vId, (string) $id);
     }

@@ -12,12 +12,9 @@ class MiniGameId
 
     /**
      * Constructor
-     *
-     * @param string $id
      */
-    public function __construct($id = null)
+    public function __construct()
     {
-        $this->id = ($id) ? (string) $id : Uuid::uuid4()->toString();
     }
 
     /**
@@ -35,5 +32,21 @@ class MiniGameId
     public function __toString()
     {
         return (string) $this->id;
+    }
+
+    /**
+     * Static constructor.
+     *
+     * @param  string $id
+     *
+     * @return MiniGameId
+     */
+    public static function create($id = null)
+    {
+        $obj = new self();
+
+        $obj->id = ($id) ? (string) $id : Uuid::uuid4()->toString();
+
+        return $obj;
     }
 }
