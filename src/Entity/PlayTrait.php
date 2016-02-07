@@ -17,12 +17,23 @@ trait PlayTrait
      */
     public function play(PlayerId $playerId, Move $move)
     {
-        $playMethod = 'play' . end(explode('_', end(explode('\\', get_class($move)))));
+        $playMethod = 'play' . $this->getClassName($move);
 
         if (! method_exists($this, $playMethod)) {
             throw new IllegalMoveException($move, 'Error: move was not recognized!');
         }
 
         return $this->$playMethod($playerId, $move);
+    }
+
+    /**
+     * @param  Move $move
+     * @return mixed
+     */
+    private function getClassName(Move $move)
+    {
+        $namespaceArray = explode('\\', get_class($move));
+        $underscoreArray = explode('_', end($namespaceArray));
+        return end($underscoreArray);
     }
 }
