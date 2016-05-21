@@ -1,4 +1,5 @@
 <?php
+
 namespace MiniGame\Exceptions;
 
 use MiniGame\Move;
@@ -6,7 +7,7 @@ use MiniGame\Move;
 class IllegalMoveException extends \Exception
 {
     /**
-     * @var string
+     * @var Move
      */
     private $move;
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace MiniGame\Entity;
 
 use MiniGame\Exceptions\IllegalMoveException;
@@ -12,8 +13,8 @@ trait PlayTrait
      *
      * @param  PlayerId $playerId
      * @param  Move $move
-     * @return GameResult
      * @throws IllegalMoveException
+     * @return GameResult
      */
     public function play(PlayerId $playerId, Move $move)
     {

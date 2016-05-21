@@ -1,4 +1,5 @@
 <?php
+
 namespace MiniGame;
 
 interface Move

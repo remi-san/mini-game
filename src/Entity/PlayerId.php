@@ -1,4 +1,5 @@
 <?php
+
 namespace MiniGame\Entity;
 
 use Rhumsaa\Uuid\Uuid;

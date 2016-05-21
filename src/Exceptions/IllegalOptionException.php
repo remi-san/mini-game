@@ -1,4 +1,5 @@
 <?php
+
 namespace MiniGame\Exceptions;
 
 class IllegalOptionException extends \Exception

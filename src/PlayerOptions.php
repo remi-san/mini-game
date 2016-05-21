@@ -1,4 +1,5 @@
 <?php
+
 namespace MiniGame;
 
 use MiniGame\Entity\MiniGameId;

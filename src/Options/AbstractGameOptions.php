@@ -1,4 +1,5 @@
 <?php
+
 namespace MiniGame\Options;
 
 use MiniGame\GameOptions;
@@ -16,7 +17,7 @@ abstract class AbstractGameOptions implements GameOptions
      *
      * @param PlayerOptions[]   $playerOptions
      */
-    public function __construct(array $playerOptions = array())
+    public function __construct(array $playerOptions = [])
     {
         $this->init($playerOptions);
     }
