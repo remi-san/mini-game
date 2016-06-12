@@ -16,9 +16,4 @@ interface GameResult
      * @return PlayerId
      */
     public function getPlayerId();
-
-    /**
-     * @return string
-     */
-    public function getAsMessage();
 }
