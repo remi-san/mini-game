@@ -1,5 +1,5 @@
 <?php
-namespace MiniGame\Test\Mock;
+namespace MiniGame\Test\Mock\Options;
 
 use MiniGame\Options\AbstractGameOptions;
 

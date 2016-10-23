@@ -13,7 +13,9 @@ trait PlayTrait
      *
      * @param  PlayerId $playerId
      * @param  Move $move
+     *
      * @throws IllegalMoveException
+     *
      * @return GameResult
      */
     public function play(PlayerId $playerId, Move $move)
@@ -29,7 +31,8 @@ trait PlayTrait
 
     /**
      * @param  Move $move
-     * @return mixed
+     *
+     * @return string
      */
     private function getClassName(Move $move)
     {

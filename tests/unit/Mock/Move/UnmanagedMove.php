@@ -1,6 +1,6 @@
 <?php
 
-namespace MiniGame\Test\Mock;
+namespace MiniGame\Test\Mock\Move;
 
 use MiniGame\Move;
 

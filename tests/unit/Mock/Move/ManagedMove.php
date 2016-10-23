@@ -1,10 +1,10 @@
 <?php
 
-namespace MiniGame\Test\Mock;
+namespace MiniGame\Test\Mock\Move;
 
 use MiniGame\Move;
 
-class MyMove implements Move
+class ManagedMove implements Move
 {
     /**
      * Returns the text
