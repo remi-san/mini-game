@@ -44,7 +44,7 @@ class PlayTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function testManagedMove()
+    public function itShouldPlayAndReturnAResult()
     {
         $gameResult = $this->serviceUnderTest->play($this->playerId, $this->managedMove);
 
@@ -54,7 +54,7 @@ class PlayTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function testUnmanagedMove()
+    public function itShouldFailPlayingIfMoveIsNotRecognized()
     {
         $this->setExpectedException(IllegalMoveException::class);
 

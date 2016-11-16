@@ -22,7 +22,7 @@ class GameOptionsTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function test()
+    public function itShouldCreateGameOptions()
     {
         $options = new TestGameOptions([$this->player]);
 

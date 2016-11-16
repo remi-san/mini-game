@@ -24,14 +24,17 @@ class GameIdTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function testGenerateId()
+    public function itShouldGenerateUuid()
     {
         $id = MiniGameId::create();
 
         $this->assertTrue(Uuid::isValid((string) $id));
     }
 
-    public function testGivenId()
+    /**
+     * @test
+     */
+    public function itShouldCreateAnIdGivenAUuid()
     {
         $innerId = $this->faker->uuid;
         $id = MiniGameId::create($innerId);
@@ -39,7 +42,10 @@ class GameIdTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($innerId, (string) $id);
     }
 
-    public function testEquals()
+    /**
+     * @test
+     */
+    public function itShouldAssertTwoIdWithTheSameUuidAreEqual()
     {
         $innerId = $this->faker->uuid;
         $id = MiniGameId::create($innerId);

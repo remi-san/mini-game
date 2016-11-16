@@ -34,7 +34,7 @@ class PlayerOptionsTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function test()
+    public function itShouldCreatePlayerOptions()
     {
         $options = new TestPlayerOptions($this->playerId, $this->miniGameId, $this->name);
 

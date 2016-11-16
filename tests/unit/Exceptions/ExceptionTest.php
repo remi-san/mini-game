@@ -5,6 +5,7 @@ use Faker\Factory;
 use Faker\Generator;
 use MiniGame\Exceptions\IllegalMoveException;
 use MiniGame\Exceptions\IllegalOptionException;
+use MiniGame\Exceptions\InactiveGameException;
 use MiniGame\Move;
 
 class ExceptionTest extends \PHPUnit_Framework_TestCase
@@ -30,7 +31,7 @@ class ExceptionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function testIllegalMoveException()
+    public function itShouldCreateAnIllegalMoveException()
     {
         $move = \Mockery::mock(Move::class);
 
@@ -43,7 +44,7 @@ class ExceptionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function testIllegalOptionException()
+    public function itShouldCreateAnIllegalOptionException()
     {
 
         $optionName = $this->faker->word;
