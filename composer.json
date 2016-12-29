@@ -25,7 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "MiniGame\\": "src/",
+            "MiniGame\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
             "MiniGame\\Test\\" : "tests/unit/"
         }
     },
